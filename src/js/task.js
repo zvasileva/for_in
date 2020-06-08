@@ -4,7 +4,7 @@ export function moveElement(arr, from, to) {
 }
 
 export function orderByProps(items, sorts) {
-	const result = [];
+	let result = [];
 	for (const item in items) {
 		if (Object.prototype.hasOwnProperty.call(items, item)) {
 			const resultItem = {};
@@ -34,7 +34,7 @@ export function orderByProps(items, sorts) {
 	for (let i = 0; i < result.length; i++) {
 		for (let j = 0; j < sorts.length; j++) {
 			if (sorts[j].toLowerCase() === result[i].key.toLowerCase()) {
-				moveElement(result, i, j);
+				result = moveElement(result, i, j);
 			}
 		}
 	}
