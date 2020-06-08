@@ -28,7 +28,6 @@ export function orderByProps(items, sorts) {
 		if (keyA > keyB) {
 			return 1;
 		}
-		return 0;
 	});
 
 
