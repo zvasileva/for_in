@@ -17,11 +17,6 @@ export function orderByProps(items, sorts) {
 	result.sort((a, b) => {
 		const keyA = a.key.toLowerCase(); const
 			keyB = b.key.toLowerCase();
-		for (let i = 0; i < sorts.length; i++) {
-			if (sorts[i].toLowerCase() === keyA) {
-				return 0;
-			}
-		}
 		if (keyA < keyB) {
 			return -1;
 		}
@@ -30,9 +25,8 @@ export function orderByProps(items, sorts) {
 		}
 	});
 
-
-	for (let i = 0; i < result.length; i++) {
-		for (let j = 0; j < sorts.length; j++) {
+	for (let j = 0; j < sorts.length; j++) {
+		for (let i = 0; i < result.length; i++) {
 			if (sorts[j].toLowerCase() === result[i].key.toLowerCase()) {
 				result = moveElement(result, i, j);
 			}
